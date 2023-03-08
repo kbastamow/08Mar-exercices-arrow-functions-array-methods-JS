@@ -249,21 +249,30 @@ console.log(declarations);
 
 const foodList2 = ["Pizza", "Ramen", "Paella", "Entrecot"];
 
-const stereotypes = foodList2.map(food => {
-     if (food === "Pizza") {
-        return `Como soy de Italia, amo comer ${food}`
-     } else if (food === "Ramen") {
-        return `Como soy de Japón, amo comer ${food}`
-     } else if (food === "Paella") {
-        return `Como soy de Valencia, amo comer ${food}`
-     } else {
-        return `Aunque no como carne, el ${food} es sabroso`
-     }
+let country = "";
+const stereotypes = foodList2.map(food => {                     //INTERESTING : Code works without CURLY BRACES!
+     if (food === "Pizza") country = "Italia";
+     else if (food === "Ramen") country = "Japón";
+     else if (food === "Paella") country = "Valencia";       
+     else return `Aunque no como carne, el ${food} es sabroso`;
+     return `Como soy de ${country}, amo comer ${food}`
 })
 
 console.log(stereotypes); 
 
+//OPTION 2 - MORE WRITING
 
+// const stereotypes = foodList2.map(food => {
+    //      if (food === "Pizza") {
+    //         return `Como soy de Italia, amo comer ${food}`
+    //      } else if (food === "Ramen") {
+    //         return `Como soy de Japón, amo comer ${food}`
+    //      } else if (food === "Paella") {
+    //         return `Como soy de Valencia, amo comer ${food}`
+    //      } else {
+    //         return `Aunque no como carne, el ${food} es sabroso`
+    //      }
+    // })
 
 
 // ●	Filter
